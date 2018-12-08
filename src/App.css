@@ -20,6 +20,10 @@
   margin: 5px auto;
 }
 
+.grayIcon {
+  color: gray !important; /* todo refactor */
+}
+
 .item {
   /*color: gainsboro;*/
   width: 100%;
