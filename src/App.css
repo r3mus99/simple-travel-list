@@ -1,13 +1,14 @@
 .App {
   text-align: center;
   margin: auto;
+  background-color: #344955;
 }
 
 .Section {
   width: 40%;
   border: 2px solid gainsboro;
   border-radius: 5px;
-
+  background-color: white;
   text-align: left;
   margin: 5px auto;
   padding: 10px;
@@ -21,11 +22,18 @@
 
 .item {
   /*color: gainsboro;*/
-  height: 30px;
+  height: 35px;
+  width: 100%;
+  border: 2px solid gainsboro;
+  background-color: #f2f2f2;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  margin: 1px;
 }
 
 .item :hover {
   color: black;
+  /*background-color: white;*/
 }
 
 .App-logo {

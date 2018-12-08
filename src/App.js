@@ -28,11 +28,11 @@ class App extends Component {
           <Item label="kartička zdravotného poistenia"/>
           <Item label="dokumenty od cestovnej kancelárie"/>
           <ColoredLine color="gainsboro" />
-          <Item label="Lieky, ktoré beriem"/>
-          <Item label="Lieky, ktoré by sa mohli hodiť"/>
+          <Item label="lieky, ktoré beriem"/>
+          <Item label="lieky, ktoré by sa mohli hodiť"/>
           <ColoredLine color="gainsboro" />
-          <Item label="Okuliare"/>
-          <Item label="Telefón (+ nabíjačka)"/>
+          <Item label="okuliare"/>
+          <Item label="telefón (+ nabíjačka)"/>
           <Item label="zámky na batožinu (+ kľúče)"/>
         </div>
         <div className="Section">
