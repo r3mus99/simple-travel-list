@@ -15,14 +15,16 @@ class SingleItem extends Component {
             checkBoxValue: false,
             visibility: false
         };
-    
+
         // todo refactor
         this.handleChange = this.handleChange.bind(this);
         this.handleVisibility = this.handleVisibility.bind(this);
     }
 
     handleChange() {
-        this.setState({checkBoxValue: !this.state.checkBoxValue});
+        const newValue = !this.state.checkBoxValue;
+        this.setState({checkBoxValue: newValue});
+        this.props.onChange(this.props.id, newValue)
     }
 
     handleVisibility() {
@@ -53,7 +55,6 @@ class SingleItem extends Component {
                     onClick={this.handleVisibility}>
                     {visibilityButton}
                 </IconButton>
-                
             </div>
         )
     }

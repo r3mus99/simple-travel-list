@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Item from './Item';
 import LinearProgress from '@material-ui/core/LinearProgress';
+import Section from './Section';
 
 class App extends Component {
   
@@ -40,6 +41,8 @@ class App extends Component {
       />
     );
 
+    const testItems = ["test1", "test2", "test3"];
+
     return (
       <div className="App">
         <LinearProgress color="secondary" variant="determinate" value={this.state.completed} />
@@ -67,6 +70,7 @@ class App extends Component {
           <Item label="oblek a kravata"/>
           <Item label="plavky"/>
         </div>
+        <Section header="test" items={testItems}/>
       </div>
     );
   }
