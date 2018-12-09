@@ -37,15 +37,14 @@ class SingleItem extends Component {
             visibilityButton = <VisibilityOff/>;
         }
 
+
         return(
             <div className="item">
                 <Checkbox 
                     checked={this.state.checkBoxValue}
-                    onClick={this.handleChange}
-                    disabled={this.state.visibility}/>
+                    onClick={this.handleChange}/>
                 <Button 
-                    onClick={this.handleChange}
-                    disabled={this.state.visibility}>
+                    onClick={this.handleChange}>
                     {this.props.label}
                 </Button>
                 <IconButton aria-label="hide" className="grayIcon"
