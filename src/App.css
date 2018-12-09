@@ -18,12 +18,23 @@ hr {
   text-align: left;
   margin: 5px auto;
   padding: 10px;
+  min-width: 450px; /* todo content based*/
 }
 
-.Header1 {
+.Header {
   text-align: center;
   font-size: 135%;
   margin: 5px auto;
+  display: flex;
+}
+
+.Header .Left {
+  flex: 1;
+}
+
+.Header .Right {
+  color: gainsboro;
+  width: auto;
 }
 
 .grayIcon {
@@ -31,11 +42,19 @@ hr {
 }
 
 .item {
-  /*color: gainsboro;*/
-  width: 100%;
   border: 2px solid gainsboro;
   background-color: #f2f2f2;
   margin: 1px;
+  display: flex;
+}
+
+.item .Left {
+  flex: 1;
+}
+
+.item .Right {
+  color: gainsboro;
+  width: auto;
 }
 
 .item :hover {

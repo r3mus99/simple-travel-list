@@ -42,19 +42,23 @@ class SingleItem extends Component {
 
         return(
             <div className="item">
-                <Checkbox 
-                    checked={this.state.checkBoxValue}
-                    onClick={this.handleChange}
-                    disabled={this.state.visibility}/>
-                <Button 
-                    onClick={this.handleChange}
-                    disabled={this.state.visibility}>
-                    {this.props.label}
-                </Button>
-                <IconButton aria-label="hide" className="grayIcon"
-                    onClick={this.handleVisibility}>
-                    {visibilityButton}
-                </IconButton>
+                <div className="Left">
+                    <Checkbox 
+                        checked={this.state.checkBoxValue}
+                        onClick={this.handleChange}
+                        disabled={this.state.visibility}/>
+                    <Button 
+                        onClick={this.handleChange}
+                        disabled={this.state.visibility}>
+                        {this.props.label}
+                    </Button>
+                </div>
+                <div className="Right">
+                    <IconButton aria-label="hide" className="grayIcon"
+                        onClick={this.handleVisibility}>
+                        {visibilityButton}
+                    </IconButton>
+                </div>
             </div>
         )
     }

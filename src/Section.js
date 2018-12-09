@@ -52,7 +52,14 @@ class Section extends Component {
 
         return(
             <div className="Section">
-                <p className="Header1">{this.props.header} {itemsChecked}/{itemsAll}</p>
+                <div className="Header">
+                    <div className="Left">
+                        <p>{this.props.header}</p>
+                    </div>
+                    <div className="Right">
+                        <p>{itemsChecked}/{itemsAll}</p>
+                    </div>
+                </div>
                 {items}
                 <div>{JSON.stringify(this.state)}</div>
                 <LinearProgress variant="determinate" color="secondary" value={progress} />

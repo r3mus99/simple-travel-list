@@ -31,7 +31,6 @@ class App extends Component {
   render() {
 
     // todo replace with map
-    const testItems = ["test1", "test2", "test3"];
     const itemsMain = [
       "peniaze a platobná karta",
       "občianský preukaz",
@@ -49,35 +48,19 @@ class App extends Component {
       "zámky na batožinu (+ kľúče)"
     ]
 
+    const itemsClothes = [
+      "košele",
+      "nohavice",
+      "oblek a kravata",
+      "plavky"
+    ]
+
     return (
       <div className="App">
         <LinearProgress color="secondary" variant="determinate" value={this.state.completed} />
-        <div className="Section">
-          <p className="Header1">Hlavné</p>
-          <Item label="peniaze a platobná karta"/>
-          <Item label="občianský preukaz"/>
-          <Item label="vodičský preukaz"/>
-          <Item label="cestovný pas"/>
-          <Item label="kartička cestovného poistenia"/>
-          <Item label="kartička zdravotného poistenia"/>
-          <Item label="dokumenty od cestovnej kancelárie"/>
-          <hr/>
-          <Item label="lieky, ktoré beriem"/>
-          <Item label="lieky, ktoré by sa mohli hodiť"/>
-          <hr/>
-          <Item label="okuliare"/>
-          <Item label="telefón (+ nabíjačka)"/>
-          <Item label="zámky na batožinu (+ kľúče)"/>
-        </div>
-        <div className="Section">
-          <p className="Header1">Oblečenie</p>
-          <Item label="košele"/>
-          <Item label="nohavice"/>
-          <Item label="oblek a kravata"/>
-          <Item label="plavky"/>
-        </div>
-        <Section header="test1" items={testItems}/>
-        <Section header="test2" items={itemsMain}/>
+
+        <Section header="Hlavné" items={itemsMain}/>
+        <Section header="Oblečenie" items={itemsClothes}/>
       </div>
     );
   }
