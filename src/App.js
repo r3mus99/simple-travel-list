@@ -41,7 +41,24 @@ class App extends Component {
       />
     );
 
+    // todo replace with map
     const testItems = ["test1", "test2", "test3"];
+    const itemsMain = [
+      "peniaze a platobná karta",
+      "občianský preukaz",
+      "vodičský preukaz",
+      "cestovný pas",
+      "kartička cestovného poistenia",
+      "kartička zdravotného poistenia",
+      "dokumenty od cestovnej kancelárie",
+      "ColoredLine",
+      "lieky, ktoré beriem",
+      "lieky, ktoré by sa mohli hodiť",
+      "ColoredLine",
+      "okuliare",
+      "telefón (+ nabíjačka)",
+      "zámky na batožinu (+ kľúče)"
+    ]
 
     return (
       <div className="App">
@@ -70,7 +87,8 @@ class App extends Component {
           <Item label="oblek a kravata"/>
           <Item label="plavky"/>
         </div>
-        <Section header="test" items={testItems}/>
+        <Section header="test1" items={testItems}/>
+        <Section header="test2" items={itemsMain}/>
       </div>
     );
   }

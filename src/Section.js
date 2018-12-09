@@ -9,7 +9,7 @@ class Section extends Component {
         super(props);
         this.state = {
             itemsChecked: 0,
-            itemsAvailable: this.props.items.length
+            itemsAvailable: this.props.items.filter((item) => item !== "ColoredLine").length
         };
 
         this.handleItemChange = this.handleItemChange.bind(this);
@@ -30,14 +30,30 @@ class Section extends Component {
     }
 
     render() {
-        const items = this.props.items.map(item => (
-            <Item 
-                label={item}
-                id={item} /* todo refactor */
-                onChange={this.handleItemChange}
-                value={this.state[item]}
+        const ColoredLine = ({ color }) => (
+            <hr
+                style={{
+                    color: color,
+                    backgroundColor: color,
+                    height: 1
+                }}
             />
-        ));
+          );
+
+        const items = this.props.items.map(item => {
+            if (item === "ColoredLine") {
+                return (<ColoredLine color="gainsboro" />);
+            } else {
+                return (
+                    <Item 
+                        label={item}
+                        id={item} /* todo refactor */
+                        onChange={this.handleItemChange}
+                        value={this.state[item]}
+                    />
+                )
+            }
+        });
 
         const itemsAll = this.state.itemsAvailable;
         const itemsChecked = this.state.itemsChecked;
