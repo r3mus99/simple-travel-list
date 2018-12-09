@@ -1,7 +1,7 @@
 import './App.css';
 import React, { Component } from 'react';
 import Item from './Item';
-
+import LinearProgress from '@material-ui/core/LinearProgress';
 
 class Section extends Component {
 
@@ -41,12 +41,14 @@ class Section extends Component {
 
         const itemsAll = this.state.itemsAvailable;
         const itemsChecked = this.state.itemsChecked;
+        const progress = (itemsChecked / itemsAll) * 100;
 
         return(
             <div className="Section">
-                <p className="Header1">{this.props.header}   {itemsChecked}/{itemsAll}</p>
+                <p className="Header1">{this.props.header} {itemsChecked}/{itemsAll}</p>
                 {items}
                 <div>{JSON.stringify(this.state)}</div>
+                <LinearProgress variant="determinate" color="secondary" value={progress} />
             </div>
         );
     }
