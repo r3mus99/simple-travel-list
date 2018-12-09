@@ -30,19 +30,10 @@ class Section extends Component {
     }
 
     render() {
-        const ColoredLine = ({ color }) => (
-            <hr
-                style={{
-                    color: color,
-                    backgroundColor: color,
-                    height: 1
-                }}
-            />
-          );
 
         const items = this.props.items.map(item => {
             if (item === "ColoredLine") {
-                return (<ColoredLine color="gainsboro" />);
+                return (<hr/>);
             } else {
                 return (
                     <Item 

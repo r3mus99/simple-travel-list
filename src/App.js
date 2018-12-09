@@ -30,17 +30,6 @@ class App extends Component {
   
   render() {
 
-    // todo refactor
-    const ColoredLine = ({ color }) => (
-      <hr
-          style={{
-              color: color,
-              backgroundColor: color,
-              height: 1
-          }}
-      />
-    );
-
     // todo replace with map
     const testItems = ["test1", "test2", "test3"];
     const itemsMain = [
@@ -72,10 +61,10 @@ class App extends Component {
           <Item label="kartička cestovného poistenia"/>
           <Item label="kartička zdravotného poistenia"/>
           <Item label="dokumenty od cestovnej kancelárie"/>
-          <ColoredLine color="gainsboro" />
+          <hr/>
           <Item label="lieky, ktoré beriem"/>
           <Item label="lieky, ktoré by sa mohli hodiť"/>
-          <ColoredLine color="gainsboro" />
+          <hr/>
           <Item label="okuliare"/>
           <Item label="telefón (+ nabíjačka)"/>
           <Item label="zámky na batožinu (+ kľúče)"/>
