@@ -1,8 +1,32 @@
 import React, { Component } from 'react';
 import './App.css';
 import Item from './Item';
+import LinearProgress from '@material-ui/core/LinearProgress';
 
 class App extends Component {
+  
+  state = {
+    completed: 0,
+  };
+
+  componentDidMount() {
+    this.timer = setInterval(this.progress, 500);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.timer);
+  }
+
+  progress = () => {
+    const { completed } = this.state;
+    if (completed === 100) {
+      // this.setState({ completed: 0 });
+    } else {
+      const diff = Math.random() * 10;
+      this.setState({ completed: Math.min(completed + diff, 100) });
+    }
+  };
+  
   render() {
 
     // todo refactor
@@ -18,6 +42,7 @@ class App extends Component {
 
     return (
       <div className="App">
+        <LinearProgress color="secondary" variant="determinate" value={this.state.completed} />
         <div className="Section">
           <p className="Header1">Hlavné</p>
           <Item label="peniaze a platobná karta"/>
