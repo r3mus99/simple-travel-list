@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/zoznam-na-cestu/precache-manifest.66ed535f12d437d33df7a86c558a075e.js"
+  "/zoznam-na-cestu/precache-manifest.9cad5c674814677182cb429127470512.js"
 );
 
 workbox.clientsClaim();
