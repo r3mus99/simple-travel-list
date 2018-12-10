@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-import Item from './Item';
 import LinearProgress from '@material-ui/core/LinearProgress';
 import Section from './Section';
 
