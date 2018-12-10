@@ -2,6 +2,7 @@ import './App.css';
 import React, { Component } from 'react';
 import Item from './Item';
 import LinearProgress from '@material-ui/core/LinearProgress';
+import ItemButton from './ItemButton';
 
 class Section extends Component {
 
@@ -10,6 +11,7 @@ class Section extends Component {
         this.state = {
             itemsChecked: 0,
             itemsHidden: 0,
+            // todo refactor
             itemsAvailable: this.props.items.filter((item) => item !== "ColoredLine").length
         };
 
@@ -76,8 +78,9 @@ class Section extends Component {
                     </div>
                 </div>
                 {items}
-                <div>{JSON.stringify(this.state)}</div>
+                {/* <div>{JSON.stringify(this.state)}</div> */}
                 <LinearProgress variant="determinate" color="secondary" value={progress} />
+                <ItemButton/>
             </div>
         );
     }
