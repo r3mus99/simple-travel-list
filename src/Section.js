@@ -11,6 +11,7 @@ class Section extends Component {
         this.state = {
             itemsChecked: 0,
             itemsHidden: 0,
+            moreDisabled: true,
             // todo refactor
             itemsAvailable: this.props.items.filter((item) => item !== "ColoredLine").length
         };
@@ -41,6 +42,7 @@ class Section extends Component {
         }
 
         this.setState({ 
+            moreDisabled: actualHidden === 0,
             itemsHidden: actualHidden 
         });
     }
@@ -80,7 +82,7 @@ class Section extends Component {
                 {items}
                 {/* <div>{JSON.stringify(this.state)}</div> */}
                 <LinearProgress variant="determinate" color="secondary" value={progress} />
-                <ItemButton/>
+                <ItemButton disabled={this.state.moreDisabled}/>
             </div>
         );
     }

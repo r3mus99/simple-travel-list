@@ -8,7 +8,7 @@ class ItemButton extends Component {
     render() {
         return(
             <div style={{width: "auto"}}>
-                <Button fullWidth>
+                <Button fullWidth disabled={this.props.disabled}>
                     <Icon/>
                 </Button>
             </div>
