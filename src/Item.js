@@ -28,7 +28,9 @@ class SingleItem extends Component {
     }
 
     handleVisibility() {
-        this.setState({visibility: !this.state.visibility});
+        const newValue = !this.state.visibility;
+        this.setState({visibility: newValue});
+        this.props.onVisibilityChange(newValue);
     }
 
     render() {

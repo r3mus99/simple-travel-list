@@ -9,6 +9,7 @@ class Section extends Component {
         super(props);
         this.state = {
             itemsChecked: 0,
+            itemsHidden: 0,
             itemsAvailable: this.props.items.filter((item) => item !== "ColoredLine").length
         };
 
@@ -29,6 +30,19 @@ class Section extends Component {
         });
     }
 
+    handleItemVisibilityChange = (value) => {
+        var actualHidden = this.state.itemsHidden;
+        if (value) {
+            actualHidden++;
+        } else {
+            actualHidden--;
+        }
+
+        this.setState({ 
+            itemsHidden: actualHidden 
+        });
+    }
+
     render() {
 
         const items = this.props.items.map(item => {
@@ -40,13 +54,14 @@ class Section extends Component {
                         label={item}
                         id={item} /* todo refactor */
                         onChange={this.handleItemChange}
+                        onVisibilityChange={this.handleItemVisibilityChange}
                         value={this.state[item]}
                     />
                 )
             }
         });
 
-        const itemsAll = this.state.itemsAvailable;
+        const itemsAll = this.state.itemsAvailable - this.state.itemsHidden;
         const itemsChecked = this.state.itemsChecked;
         const progress = (itemsChecked / itemsAll) * 100;
 
