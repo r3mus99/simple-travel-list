@@ -2,7 +2,7 @@ import './App.css';
 import React, { Component } from 'react';
 import Item from './Item';
 import LinearProgress from '@material-ui/core/LinearProgress';
-import ItemButton from './ItemButton';
+import HiddenSection from './HiddenSection';
 
 class Section extends Component {
 
@@ -10,10 +10,9 @@ class Section extends Component {
         super(props);
         this.state = {
             itemsChecked: 0,
-            itemsHidden: 0,
-            moreDisabled: true,
-            // todo refactor
-            itemsAvailable: this.props.items.filter((item) => item !== "ColoredLine").length
+
+            itemsHidden: [],
+            itemsVisible: this.props.items.filter((item) => item !== "ColoredLine"),
         };
 
         this.handleItemChange = this.handleItemChange.bind(this);
@@ -33,18 +32,29 @@ class Section extends Component {
         });
     }
 
-    handleItemVisibilityChange = (value) => {
+    handleItemVisibilityChange = (item, value) => {
         var actualHidden = this.state.itemsHidden;
+        var actualVisible = this.state.itemsVisible;
+
         if (value) {
-            actualHidden++;
+            // add item to hidden array
+            this.setState({ 
+                itemsHidden: [ ...actualHidden, item] 
+            });
+            this.setState(prevState => ({ 
+                itemsVisible: prevState.itemsVisible.filter(h => h !== item) 
+            }));
         } else {
-            actualHidden--;
+            this.setState({ 
+                itemsVisible: [ ...actualVisible, item] 
+            });
+            // remove item from hidden array
+            this.setState(prevState => ({ 
+                itemsHidden: prevState.itemsHidden.filter(h => h !== item) 
+            }));
         }
 
-        this.setState({ 
-            moreDisabled: actualHidden === 0,
-            itemsHidden: actualHidden 
-        });
+
     }
 
     render() {
@@ -65,7 +75,7 @@ class Section extends Component {
             }
         });
 
-        const itemsAll = this.state.itemsAvailable - this.state.itemsHidden;
+        const itemsAll = this.state.itemsVisible.length;
         const itemsChecked = this.state.itemsChecked;
         const progress = (itemsChecked / itemsAll) * 100;
 
@@ -82,7 +92,8 @@ class Section extends Component {
                 {items}
                 {/* <div>{JSON.stringify(this.state)}</div> */}
                 <LinearProgress variant="determinate" color="secondary" value={progress} />
-                <ItemButton disabled={this.state.moreDisabled}/>
+                {/* <HiddenSection items={this.state.itemsVisible}/> */}
+                <HiddenSection items={this.state.itemsHidden}/>
             </div>
         );
     }
