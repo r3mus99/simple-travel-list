@@ -1,13 +1,13 @@
 {
-  "main.css": "/zoznam-na-cestu/static/css/main.020f4c63.chunk.css",
-  "main.js": "/zoznam-na-cestu/static/js/main.5d1c2ca8.chunk.js",
-  "main.js.map": "/zoznam-na-cestu/static/js/main.5d1c2ca8.chunk.js.map",
-  "static/js/1.c7de0344.chunk.js": "/zoznam-na-cestu/static/js/1.c7de0344.chunk.js",
-  "static/js/1.c7de0344.chunk.js.map": "/zoznam-na-cestu/static/js/1.c7de0344.chunk.js.map",
+  "main.css": "/zoznam-na-cestu/static/css/main.69de7123.chunk.css",
+  "main.js": "/zoznam-na-cestu/static/js/main.644fe24e.chunk.js",
+  "main.js.map": "/zoznam-na-cestu/static/js/main.644fe24e.chunk.js.map",
+  "static/js/1.b929c820.chunk.js": "/zoznam-na-cestu/static/js/1.b929c820.chunk.js",
+  "static/js/1.b929c820.chunk.js.map": "/zoznam-na-cestu/static/js/1.b929c820.chunk.js.map",
   "runtime~main.js": "/zoznam-na-cestu/static/js/runtime~main.afd2e990.js",
   "runtime~main.js.map": "/zoznam-na-cestu/static/js/runtime~main.afd2e990.js.map",
-  "static/css/main.020f4c63.chunk.css.map": "/zoznam-na-cestu/static/css/main.020f4c63.chunk.css.map",
+  "static/css/main.69de7123.chunk.css.map": "/zoznam-na-cestu/static/css/main.69de7123.chunk.css.map",
   "index.html": "/zoznam-na-cestu/index.html",
-  "precache-manifest.9cad5c674814677182cb429127470512.js": "/zoznam-na-cestu/precache-manifest.9cad5c674814677182cb429127470512.js",
+  "precache-manifest.bbc1822c28288eb296db2331d36e5e9c.js": "/zoznam-na-cestu/precache-manifest.bbc1822c28288eb296db2331d36e5e9c.js",
   "service-worker.js": "/zoznam-na-cestu/service-worker.js"
 }
