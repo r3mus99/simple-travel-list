@@ -14,22 +14,25 @@ class Section extends Component {
             itemsHidden: [],
             itemsVisible: this.props.items,
         };
-
-        this.handleItemChange = this.handleItemChange.bind(this);
     }
 
-    handleItemChange(item, value) {
-        var actualItems = this.state.itemsChecked;
-        if (value) {
-            this.setState({
-                itemsChecked: [...actualItems, item]
-            });
-        } else {
+    handleItemChange = (item) => {
+        const isItemChecked = this.isItemChecked(item);
+        const actualItems = this.state.itemsChecked;
+
+        if (isItemChecked) {
             this.setState(prevState => ({
                 itemsChecked: prevState.itemsChecked.filter(h => h !== item)
             }));
+        } else {
+            this.setState({
+                itemsChecked: [...actualItems, item]
+            });
         }
+    };
 
+    isItemChecked(item) {
+        return this.state.itemsChecked.indexOf(item) !== -1;
     }
 
     handleItemVisibilityChange = (item, value) => {
@@ -53,9 +56,7 @@ class Section extends Component {
                 itemsHidden: prevState.itemsHidden.filter(h => h !== item)
             }));
         }
-
-
-    }
+    };
 
     render() {
 
@@ -66,7 +67,7 @@ class Section extends Component {
                     id={item} /* todo refactor */
                     onChange={this.handleItemChange}
                     onVisibilityChange={this.handleItemVisibilityChange}
-                    value={this.state[item]}
+                    checked={this.isItemChecked(item)}
                 />
             )
         });
@@ -80,11 +81,13 @@ class Section extends Component {
                 <SectionHeader
                     header={this.props.header}
                     itemsChecked={itemsChecked}
-                    itemsAll={itemsVisible}></SectionHeader>
+                    itemsAll={itemsVisible}/>
                 {items}
                 <LinearProgress variant="determinate" color="secondary" value={progress} />
                 <HiddenSection items={this.state.itemsHidden} />
-                {/* <div>{JSON.stringify(this.state)}</div> */}
+                <div>{"checked: " + JSON.stringify(this.state.itemsChecked)}</div>
+                <div>{"visible: " + JSON.stringify(this.state.itemsVisible)}</div>
+                <div>{"hidden: " + JSON.stringify(this.state.itemsHidden)}</div>
             </div>
         );
     }

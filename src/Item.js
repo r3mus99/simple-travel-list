@@ -12,16 +12,13 @@ class SingleItem extends Component {
         super(props);
 
         this.state = {
-            checkBoxValue: false,
             visibility: false
         };
 
     }
 
     handleChange = () => {
-        const newValue = !this.state.checkBoxValue;
-        this.setState({checkBoxValue: newValue});
-        this.props.onChange(this.props.id, newValue)
+        this.props.onChange(this.props.id)
     };
 
     handleVisibility = () => {
@@ -43,7 +40,7 @@ class SingleItem extends Component {
             <div className="item">
                 <div className="Left">
                     <Checkbox
-                        checked={this.state.checkBoxValue}
+                        checked={this.props.checked}
                         onClick={this.handleChange}
                         disabled={this.state.visibility}/>
                     <Button
