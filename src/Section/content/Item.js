@@ -1,4 +1,4 @@
-import './App.css';
+import '../../App.css';
 import React, {Component} from 'react';
 import Checkbox from '@material-ui/core/Checkbox';
 import Button from '@material-ui/core/Button';

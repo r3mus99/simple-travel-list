@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import LinearProgress from '@material-ui/core/LinearProgress';
-import Section from './Section';
+import Section from './Section/Section';
 
 class App extends Component {
 
@@ -43,14 +43,14 @@ class App extends Component {
       "okuliare",
       "telefón (+ nabíjačka)",
       "zámky na batožinu (+ kľúče)"
-    ]
+    ];
 
     const itemsClothes = [
       "košele",
       "nohavice",
       "oblek a kravata",
       "plavky"
-    ]
+    ];
 
     return (
       <div className="App">

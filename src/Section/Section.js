@@ -1,9 +1,9 @@
-import './App.css';
+import '../App.css';
 import React, { Component } from 'react';
-import Item from './Item';
-import LinearProgress from '@material-ui/core/LinearProgress';
-import HiddenSection from './HiddenSection';
-import SectionHeader from './Section/SectionHeader';
+import Item from './content/Item';
+import SectionHidden from './SectionHidden';
+import SectionHeader from './SectionHeader';
+import SectionVisible from "./SectionVisible";
 
 class Section extends Component {
 
@@ -91,9 +91,10 @@ class Section extends Component {
                     header={this.props.header}
                     itemsChecked={itemsCheckedLength}
                     itemsAll={itemsVisibleLength}/>
-                {itemsVisibleMapped}
-                <LinearProgress variant="determinate" color="secondary" value={progress} />
-                <HiddenSection
+                <SectionVisible
+                    items={itemsVisibleMapped}
+                    progress={progress}/>
+                <SectionHidden
                     items={itemsHiddenMapped}/>
                 {/*<div>{"checked: " + JSON.stringify(this.state.itemsChecked)}</div>*/}
                 {/*<div>{"visible: " + JSON.stringify(this.state.itemsVisible)}</div>*/}

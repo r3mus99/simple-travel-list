@@ -1,8 +1,8 @@
-import './App.css';
+import '../App.css';
 import React, { Component } from 'react';
-import ItemButton from './ItemButton';
+import ItemButton from './content/ItemButton';
 
-class HiddenSection extends Component {
+class SectionHidden extends Component {
 
     constructor(props) {
         super(props);
@@ -35,4 +35,4 @@ class HiddenSection extends Component {
     }
 }
 
-export default HiddenSection;
+export default SectionHidden;
