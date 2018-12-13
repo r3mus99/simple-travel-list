@@ -1,5 +1,5 @@
 import './App.css';
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import Checkbox from '@material-ui/core/Checkbox';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
@@ -8,30 +8,27 @@ import VisibilityOff from '@material-ui/icons/VisibilityOff';
 
 class SingleItem extends Component {
 
-    constructor(props){
+    constructor(props) {
         super(props);
-    
+
         this.state = {
             checkBoxValue: false,
             visibility: false
         };
 
-        // todo refactor
-        this.handleChange = this.handleChange.bind(this);
-        this.handleVisibility = this.handleVisibility.bind(this);
     }
 
-    handleChange() {
+    handleChange = () => {
         const newValue = !this.state.checkBoxValue;
         this.setState({checkBoxValue: newValue});
         this.props.onChange(this.props.id, newValue)
-    }
+    };
 
-    handleVisibility() {
+    handleVisibility = () => {
         const newValue = !this.state.visibility;
         this.setState({visibility: newValue});
         this.props.onVisibilityChange(this.props.id, newValue);
-    }
+    };
 
     render() {
         let visibilityButton;
@@ -42,14 +39,14 @@ class SingleItem extends Component {
         }
 
 
-        return(
+        return (
             <div className="item">
                 <div className="Left">
-                    <Checkbox 
+                    <Checkbox
                         checked={this.state.checkBoxValue}
                         onClick={this.handleChange}
                         disabled={this.state.visibility}/>
-                    <Button 
+                    <Button
                         onClick={this.handleChange}
                         disabled={this.state.visibility}>
                         {this.props.label}
