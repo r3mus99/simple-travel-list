@@ -7,7 +7,7 @@ hr {
 .App {
   text-align: center;
   margin: auto;
-  background-color: #344955;
+  background-color: #001f3f;
 }
 
 .Section {
@@ -38,8 +38,8 @@ hr {
 }
 
 .item {
-  border: 2px solid gainsboro;
-  background-color: #f2f2f2;
+  border: 2px solid #AAAAAA;
+  background-color: #DDDDDD;
   margin: 1px;
   display: flex;
 }
