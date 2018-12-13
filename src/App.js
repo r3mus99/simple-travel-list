@@ -4,7 +4,7 @@ import LinearProgress from '@material-ui/core/LinearProgress';
 import Section from './Section';
 
 class App extends Component {
-  
+
   state = {
     completed: 0,
   };
@@ -26,7 +26,7 @@ class App extends Component {
       this.setState({ completed: Math.min(completed + diff, 100) });
     }
   };
-  
+
   render() {
 
     // todo replace with map
@@ -38,10 +38,8 @@ class App extends Component {
       "kartička cestovného poistenia",
       "kartička zdravotného poistenia",
       "dokumenty od cestovnej kancelárie",
-      "ColoredLine",
       "lieky, ktoré beriem",
       "lieky, ktoré by sa mohli hodiť",
-      "ColoredLine",
       "okuliare",
       "telefón (+ nabíjačka)",
       "zámky na batožinu (+ kľúče)"
@@ -58,8 +56,8 @@ class App extends Component {
       <div className="App">
         <LinearProgress color="secondary" variant="determinate" value={this.state.completed} />
 
-        <Section header="Hlavné" items={itemsMain}/>
-        <Section header="Oblečenie" items={itemsClothes}/>
+        <Section header="Hlavné" items={itemsMain} />
+        <Section header="Oblečenie" items={itemsClothes} />
       </div>
     );
   }

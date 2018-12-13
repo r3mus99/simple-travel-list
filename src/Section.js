@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import Item from './Item';
 import LinearProgress from '@material-ui/core/LinearProgress';
 import HiddenSection from './HiddenSection';
+import SectionHeader from './Section/SectionHeader';
 
 class Section extends Component {
 
@@ -12,7 +13,7 @@ class Section extends Component {
             itemsChecked: 0,
 
             itemsHidden: [],
-            itemsVisible: this.props.items.filter((item) => item !== "ColoredLine"),
+            itemsVisible: this.props.items,
         };
 
         this.handleItemChange = this.handleItemChange.bind(this);
@@ -26,9 +27,9 @@ class Section extends Component {
             actualItems--;
         }
 
-        this.setState({ 
+        this.setState({
             [item]: value,
-            itemsChecked: actualItems 
+            itemsChecked: actualItems
         });
     }
 
@@ -38,19 +39,19 @@ class Section extends Component {
 
         if (value) {
             // add item to hidden array
-            this.setState({ 
-                itemsHidden: [ ...actualHidden, item] 
+            this.setState({
+                itemsHidden: [...actualHidden, item]
             });
-            this.setState(prevState => ({ 
-                itemsVisible: prevState.itemsVisible.filter(h => h !== item) 
+            this.setState(prevState => ({
+                itemsVisible: prevState.itemsVisible.filter(h => h !== item)
             }));
         } else {
-            this.setState({ 
-                itemsVisible: [ ...actualVisible, item] 
+            this.setState({
+                itemsVisible: [...actualVisible, item]
             });
             // remove item from hidden array
-            this.setState(prevState => ({ 
-                itemsHidden: prevState.itemsHidden.filter(h => h !== item) 
+            this.setState(prevState => ({
+                itemsHidden: prevState.itemsHidden.filter(h => h !== item)
             }));
         }
 
@@ -60,40 +61,31 @@ class Section extends Component {
     render() {
 
         const items = this.props.items.map(item => {
-            if (item === "ColoredLine") {
-                return (<hr/>);
-            } else {
-                return (
-                    <Item 
-                        label={item}
-                        id={item} /* todo refactor */
-                        onChange={this.handleItemChange}
-                        onVisibilityChange={this.handleItemVisibilityChange}
-                        value={this.state[item]}
-                    />
-                )
-            }
+            return (
+                <Item
+                    label={item}
+                    id={item} /* todo refactor */
+                    onChange={this.handleItemChange}
+                    onVisibilityChange={this.handleItemVisibilityChange}
+                    value={this.state[item]}
+                />
+            )
         });
 
         const itemsAll = this.state.itemsVisible.length;
         const itemsChecked = this.state.itemsChecked;
         const progress = (itemsChecked / itemsAll) * 100;
 
-        return(
+        return (
             <div className="Section">
-                <div className="Header">
-                    <div className="Left">
-                        <p>{this.props.header}</p>
-                    </div>
-                    <div className="Right">
-                        <p>{itemsChecked}/{itemsAll}</p>
-                    </div>
-                </div>
+                <SectionHeader
+                    header={this.props.header}
+                    itemsChecked={itemsChecked}
+                    itemsAll={itemsAll}></SectionHeader>
                 {items}
-                {/* <div>{JSON.stringify(this.state)}</div> */}
                 <LinearProgress variant="determinate" color="secondary" value={progress} />
-                {/* <HiddenSection items={this.state.itemsVisible}/> */}
-                <HiddenSection items={this.state.itemsHidden}/>
+                <HiddenSection items={this.state.itemsHidden} />
+                {/* <div>{JSON.stringify(this.state)}</div> */}
             </div>
         );
     }
