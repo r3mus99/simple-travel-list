@@ -7,7 +7,7 @@ import IconUp from '@material-ui/icons/KeyboardArrowUp';
 class ItemButton extends Component {
 
     render() {
-        const icon = this.props.itemsVisible && !this.props.disabled
+        const icon = this.props.contentVisible && !this.props.disabled
             ? <IconUp/>
             : <IconDown/>;
 

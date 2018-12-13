@@ -18,7 +18,7 @@ class SingleItem extends Component {
 
     render() {
         let visibilityButton;
-        if (this.props.visible) {
+        if (!this.props.visible) {
             visibilityButton = <VisibilityOn/>;
         } else {
             visibilityButton = <VisibilityOff/>;

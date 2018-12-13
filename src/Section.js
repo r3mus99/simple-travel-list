@@ -63,37 +63,41 @@ class Section extends Component {
         }
     };
 
+    mapItem = (item) => {
+        return (
+            <Item
+                label={item}
+                id={item} /* todo refactor */
+                onChange={this.handleItemChange}
+                onVisibilityChange={this.handleItemVisibilityChange}
+                checked={this.isItemChecked(item)}
+                visible={this.isItemVisible(item)}
+            />
+        )
+    };
+
     render() {
 
-        const items = this.props.items.map(item => {
-            return (
-                <Item
-                    label={item}
-                    id={item} /* todo refactor */
-                    onChange={this.handleItemChange}
-                    onVisibilityChange={this.handleItemVisibilityChange}
-                    checked={this.isItemChecked(item)}
-                    visible={this.isItemVisible(item)}
-                />
-            )
-        });
+        const itemsVisibleMapped = this.state.itemsVisible.map(this.mapItem);
+        const itemsHiddenMapped = this.state.itemsHidden.map(this.mapItem);
 
-        const itemsVisible = this.state.itemsVisible.length;
-        const itemsChecked = this.state.itemsChecked.length;
-        const progress = (itemsChecked / itemsVisible) * 100;
+        const itemsVisibleLength = this.state.itemsVisible.length;
+        const itemsCheckedLength = this.state.itemsChecked.length;
+        const progress = (itemsCheckedLength / itemsVisibleLength) * 100;
 
         return (
             <div className="Section">
                 <SectionHeader
                     header={this.props.header}
-                    itemsChecked={itemsChecked}
-                    itemsAll={itemsVisible}/>
-                {items}
+                    itemsChecked={itemsCheckedLength}
+                    itemsAll={itemsVisibleLength}/>
+                {itemsVisibleMapped}
                 <LinearProgress variant="determinate" color="secondary" value={progress} />
-                <HiddenSection items={this.state.itemsHidden} />
-                <div>{"checked: " + JSON.stringify(this.state.itemsChecked)}</div>
-                <div>{"visible: " + JSON.stringify(this.state.itemsVisible)}</div>
-                <div>{"hidden: " + JSON.stringify(this.state.itemsHidden)}</div>
+                <HiddenSection
+                    items={itemsHiddenMapped}/>
+                {/*<div>{"checked: " + JSON.stringify(this.state.itemsChecked)}</div>*/}
+                {/*<div>{"visible: " + JSON.stringify(this.state.itemsVisible)}</div>*/}
+                {/*<div>{"hidden: " + JSON.stringify(this.state.itemsHidden)}</div>*/}
             </div>
         );
     }

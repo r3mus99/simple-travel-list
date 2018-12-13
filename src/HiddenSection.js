@@ -1,5 +1,4 @@
 import './App.css';
-import Item from './Item';
 import React, { Component } from 'react';
 import ItemButton from './ItemButton';
 
@@ -9,36 +8,25 @@ class HiddenSection extends Component {
         super(props);
 
         this.state = {
-            itemsVisible: false
+            contentVisible: false
         }
     }
 
     handleClick = () => {
-        const newValue = !this.state.itemsVisible;
-        // alert("i am handling click")
-        this.setState({itemsVisible: newValue});
-    }
+        const newValue = !this.state.contentVisible;
+        this.setState({contentVisible: newValue});
+    };
 
     render() {
         const buttonDisabled = this.props.items.length === 0;
-        const items = this.state.itemsVisible 
-            ? this.props.items.map(item => {
-                return (
-                    <Item 
-                        label={item}
-                        id={item} /* todo refactor */
-                        onChange={(item, value) => {}}
-                        onVisibilityChange={(item, value) => {}}
-                        /* value={this.state[item]}*/
-                    />
-                )
-            })
+        const items = this.state.contentVisible
+            ? this.props.items
             : null;
 
         return(
             <div>
-                <ItemButton 
-                    itemsVisible={this.state.itemsVisible}
+                <ItemButton
+                    contentVisible={this.state.contentVisible}
                     disabled={buttonDisabled}
                     onClick={this.handleClick}/>
                 { items }
