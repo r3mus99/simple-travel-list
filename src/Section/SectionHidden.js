@@ -1,6 +1,7 @@
 import '../App.css';
 import React, { Component } from 'react';
 import ItemButton from './content/ItemButton';
+import FlipMove from "react-flip-move";
 
 class SectionHidden extends Component {
 
@@ -29,7 +30,14 @@ class SectionHidden extends Component {
                     contentVisible={this.state.contentVisible}
                     disabled={buttonDisabled}
                     onClick={this.handleClick}/>
-                { items }
+                <FlipMove
+                    duration={100}
+                    enterAnimation={'accordionVertical'}
+                    leaveAnimation={'none'} // todo
+                    staggerDelayBy={20}>
+                    { items }
+                </FlipMove>
+
             </div>
         );
     }
