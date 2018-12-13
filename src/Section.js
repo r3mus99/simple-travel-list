@@ -35,7 +35,12 @@ class Section extends Component {
         return this.state.itemsChecked.indexOf(item) !== -1;
     }
 
-    handleItemVisibilityChange = (item, value) => {
+    isItemVisible(item) {
+        return this.state.itemsVisible.indexOf(item) !== -1;
+    }
+
+    handleItemVisibilityChange = (item) => {
+        const value = this.isItemVisible(item);
         var actualHidden = this.state.itemsHidden;
         var actualVisible = this.state.itemsVisible;
 
@@ -68,6 +73,7 @@ class Section extends Component {
                     onChange={this.handleItemChange}
                     onVisibilityChange={this.handleItemVisibilityChange}
                     checked={this.isItemChecked(item)}
+                    visible={this.isItemVisible(item)}
                 />
             )
         });

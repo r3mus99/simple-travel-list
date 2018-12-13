@@ -8,28 +8,17 @@ import VisibilityOff from '@material-ui/icons/VisibilityOff';
 
 class SingleItem extends Component {
 
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            visibility: false
-        };
-
-    }
-
     handleChange = () => {
         this.props.onChange(this.props.id)
     };
 
     handleVisibility = () => {
-        const newValue = !this.state.visibility;
-        this.setState({visibility: newValue});
-        this.props.onVisibilityChange(this.props.id, newValue);
+        this.props.onVisibilityChange(this.props.id);
     };
 
     render() {
         let visibilityButton;
-        if (this.state.visibility) {
+        if (this.props.visible) {
             visibilityButton = <VisibilityOn/>;
         } else {
             visibilityButton = <VisibilityOff/>;
@@ -42,10 +31,10 @@ class SingleItem extends Component {
                     <Checkbox
                         checked={this.props.checked}
                         onClick={this.handleChange}
-                        disabled={this.state.visibility}/>
+                        disabled={!this.props.visible}/>
                     <Button
                         onClick={this.handleChange}
-                        disabled={this.state.visibility}>
+                        disabled={!this.props.visible}>
                         {this.props.label}
                     </Button>
                 </div>
