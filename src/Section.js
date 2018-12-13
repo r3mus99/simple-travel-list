@@ -10,8 +10,7 @@ class Section extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            itemsChecked: 0,
-
+            itemsChecked: [],
             itemsHidden: [],
             itemsVisible: this.props.items,
         };
@@ -22,15 +21,15 @@ class Section extends Component {
     handleItemChange(item, value) {
         var actualItems = this.state.itemsChecked;
         if (value) {
-            actualItems++;
+            this.setState({
+                itemsChecked: [...actualItems, item]
+            });
         } else {
-            actualItems--;
+            this.setState(prevState => ({
+                itemsChecked: prevState.itemsChecked.filter(h => h !== item)
+            }));
         }
 
-        this.setState({
-            [item]: value,
-            itemsChecked: actualItems
-        });
     }
 
     handleItemVisibilityChange = (item, value) => {
@@ -72,16 +71,16 @@ class Section extends Component {
             )
         });
 
-        const itemsAll = this.state.itemsVisible.length;
-        const itemsChecked = this.state.itemsChecked;
-        const progress = (itemsChecked / itemsAll) * 100;
+        const itemsVisible = this.state.itemsVisible.length;
+        const itemsChecked = this.state.itemsChecked.length;
+        const progress = (itemsChecked / itemsVisible) * 100;
 
         return (
             <div className="Section">
                 <SectionHeader
                     header={this.props.header}
                     itemsChecked={itemsChecked}
-                    itemsAll={itemsAll}></SectionHeader>
+                    itemsAll={itemsVisible}></SectionHeader>
                 {items}
                 <LinearProgress variant="determinate" color="secondary" value={progress} />
                 <HiddenSection items={this.state.itemsHidden} />
