@@ -84,7 +84,9 @@ class Section extends Component {
         const itemsHiddenMapped = this.state.itemsHidden.map(this.mapItem);
 
         const itemsVisibleLength = this.state.itemsVisible.length;
-        const itemsCheckedLength = this.state.itemsChecked.length;
+        const itemsCheckedLength = this.state.itemsChecked
+            .filter(item => this.isItemVisible(item)).length;
+        // count only visible items as checked
         const progress = (itemsCheckedLength / itemsVisibleLength) * 100;
 
         return (
