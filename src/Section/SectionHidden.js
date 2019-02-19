@@ -15,29 +15,30 @@ class SectionHidden extends Component {
 
     handleClick = () => {
         const newValue = !this.state.contentVisible;
-        this.setState({contentVisible: newValue});
+        this.setState({ contentVisible: newValue });
     };
 
     render() {
-        const buttonDisabled = this.props.items.length === 0;
+        const button = this.props.items.length === 0
+            ? null
+            : <ItemButton
+                contentVisible={this.state.contentVisible}
+                onClick={this.handleClick} />
+
         const items = this.state.contentVisible
             ? this.props.items
             : null;
 
-        return(
+        return (
             <div>
-                <ItemButton
-                    contentVisible={this.state.contentVisible}
-                    disabled={buttonDisabled}
-                    onClick={this.handleClick}/>
                 <FlipMove
                     duration={100}
                     enterAnimation={'accordionVertical'}
                     leaveAnimation={'none'} // todo
                     staggerDelayBy={20}>
-                    { items }
+                    {button}
+                    {items}
                 </FlipMove>
-
             </div>
         );
     }

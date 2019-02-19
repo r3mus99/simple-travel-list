@@ -29,6 +29,7 @@ class Section extends Component {
                 itemsChecked: [...actualItems, item]
             });
         }
+        // window.localStorage.setItem(this.props.header, JSON.stringify(this.state));
     };
 
     isItemChecked(item) {
@@ -61,6 +62,7 @@ class Section extends Component {
                 itemsHidden: prevState.itemsHidden.filter(h => h !== item)
             }));
         }
+        // window.localStorage.setItem(this.props.header, JSON.stringify(this.state));
     };
 
     mapItem = (item) => {
@@ -90,12 +92,12 @@ class Section extends Component {
                 <SectionHeader
                     header={this.props.header}
                     itemsChecked={itemsCheckedLength}
-                    itemsAll={itemsVisibleLength}/>
+                    itemsAll={itemsVisibleLength} />
                 <SectionVisible
                     items={itemsVisibleMapped}
-                    progress={progress}/>
+                    progress={progress} />
                 <SectionHidden
-                    items={itemsHiddenMapped}/>
+                    items={itemsHiddenMapped} />
                 {/*<div>{"checked: " + JSON.stringify(this.state.itemsChecked)}</div>*/}
                 {/*<div>{"visible: " + JSON.stringify(this.state.itemsVisible)}</div>*/}
                 {/*<div>{"hidden: " + JSON.stringify(this.state.itemsHidden)}</div>*/}

@@ -29,35 +29,59 @@ class App extends Component {
 
   render() {
 
+    const clothingForNight = [
+      "pyžamo",
+      "štuple do uší",
+      "maska na oči"
+    ];
+
+    const clothingOther = [
+      "spodné prádlo",
+      "ponožky"
+    ];
+
+    const clothingMain = [
+      "nohavice (1ks/4dni)",
+      "tričko / sveter / košeľa (1-2ks/deň)"
+    ];
+
+    const cosmetics = [
+      "dezodorant",
+      "voňavka",
+      "zubná kefka (+ pasta)"
+    ];
+
+    const medicine = [
+      "lieky, ktoré beriem",
+      "lieky, ktoré by sa mohli hodiť",
+      "kartička cestovného poistenia",
+      "kartička zdravotného poistenia",
+    ];
+
     // todo replace with map
-    const itemsMain = [
+    const doklady = [
       "peniaze a platobná karta",
       "občianský preukaz",
       "vodičský preukaz",
       "cestovný pas",
-      "kartička cestovného poistenia",
-      "kartička zdravotného poistenia",
-      "dokumenty od cestovnej kancelárie",
-      "lieky, ktoré beriem",
-      "lieky, ktoré by sa mohli hodiť",
-      "okuliare",
-      "telefón (+ nabíjačka)",
-      "zámky na batožinu (+ kľúče)"
     ];
 
-    const itemsClothes = [
-      "košele",
-      "nohavice",
-      "oblek a kravata",
-      "plavky"
+    const electronics = [
+      "telefón (+ nabíjačka)",
+      "slúchadlá",
+      "powerbanka"
     ];
 
     return (
       <div className="App">
-        <LinearProgress color="secondary" variant="determinate" value={this.state.completed} />
-
-        <Section header="Hlavné" items={itemsMain} />
-        <Section header="Oblečenie" items={itemsClothes} />
+        {/* <LinearProgress color="secondary" variant="determinate" value={this.state.completed} /> */}
+        <Section header="Doklady" items={doklady} />
+        <Section header="Elektronika" items={electronics} />
+        <Section header="Lieky" items={medicine} />
+        <Section header="Oblečenie - hlavné" items={clothingMain} />
+        <Section header="Oblečenie - doplnky" items={clothingOther} />
+        <Section header="Na spanie" items={clothingForNight} />
+        <Section header="Kozmetika" items={cosmetics} />
       </div>
     );
   }
