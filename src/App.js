@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-import LinearProgress from '@material-ui/core/LinearProgress';
 import Section from './Section/Section';
 
 class App extends Component {
