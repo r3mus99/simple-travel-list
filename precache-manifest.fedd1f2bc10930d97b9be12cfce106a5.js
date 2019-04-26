@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/zoznam-na-cestu/static/css/main.5ccb2e65.chunk.css"
   },
   {
-    "revision": "99455db60823b8f3f4dc88e7a4c837d0",
+    "revision": "aa61a7d14606a449a893328e575cc40f",
     "url": "/zoznam-na-cestu/index.html"
   }
 ];
