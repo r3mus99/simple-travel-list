@@ -4,19 +4,19 @@ self.__precacheManifest = [
     "url": "/zoznam-na-cestu/static/js/runtime~main.f662eb7b.js"
   },
   {
-    "revision": "c5bf4a829313b1b4dc82",
-    "url": "/zoznam-na-cestu/static/js/main.c5bf4a82.chunk.js"
+    "revision": "335036712e523194a778",
+    "url": "/zoznam-na-cestu/static/js/main.33503671.chunk.js"
   },
   {
     "revision": "1aa6e7e0d42d4a404209",
     "url": "/zoznam-na-cestu/static/js/2.1aa6e7e0.chunk.js"
   },
   {
-    "revision": "c5bf4a829313b1b4dc82",
-    "url": "/zoznam-na-cestu/static/css/main.0e15d2ae.chunk.css"
+    "revision": "335036712e523194a778",
+    "url": "/zoznam-na-cestu/static/css/main.5ccb2e65.chunk.css"
   },
   {
-    "revision": "e61834c9f43a6eec474ec47d6e3e8cc3",
+    "revision": "99455db60823b8f3f4dc88e7a4c837d0",
     "url": "/zoznam-na-cestu/index.html"
   }
 ];
