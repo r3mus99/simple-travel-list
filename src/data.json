@@ -1,0 +1,69 @@
+{
+  "content": [
+    {
+      "header": "Doklady",
+      "items": [
+        "peniaze a platobná karta",
+        "občianský preukaz",
+        "vodičský preukaz",
+        "cestovný pas"
+      ]
+    },
+    {
+      "header": "Elektronika",
+      "items": [
+        "telefón (+ nabíjačka)",
+        "slúchadlá",
+        "powerbanka"
+      ]
+    },
+    {
+      "header": "Lieky",
+      "items": [
+        "lieky, ktoré beriem",
+        "lieky, ktoré by sa mohli hodiť",
+        "kartička cestovného poistenia",
+        "kartička zdravotného poistenia"
+      ]
+    },
+    {
+      "header": "Oblečenie - hlavné",
+      "items": [
+        "tričko / sveter / košeľa (1-2ks/deň)",
+        "nohavice (1ks/4dni)"
+      ]
+    },
+    {
+      "header": "Oblečenie - doplnky",
+      "items": [
+        "spodné prádlo",
+        "ponožky"
+      ]
+    },
+    {
+      "header": "Na spanie",
+      "items": [
+        "pyžamo",
+        "štuple do uší",
+        "maska na oči"
+      ]
+    },
+    {
+      "header": "Kozmetika",
+      "items": [
+        "dezodorant",
+        "voňavka",
+        "zubná kefka (+ pasta)",
+        "tampóny do uší"
+      ]
+    },
+    {
+      "header": "Voľný čas",
+      "items": [
+        "časopis",
+        "kniha",
+        "čítačka kníh"
+      ]
+    }
+  ]
+}
