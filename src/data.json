@@ -1,68 +1,68 @@
 {
   "content": [
     {
-      "header": "Doklady",
+      "header": "Documents",
       "items": [
-        "peniaze a platobná karta",
-        "občianský preukaz",
-        "vodičský preukaz",
-        "cestovný pas"
+        "money and payment card",
+        "ID card",
+        "driver's license",
+        "passport"
       ]
     },
     {
-      "header": "Elektronika",
+      "header": "Electronics",
       "items": [
-        "telefón (+ nabíjačka)",
-        "slúchadlá",
-        "powerbanka"
+        "phone (+ charger)",
+        "headphones",
+        "power bank"
       ]
     },
     {
-      "header": "Lieky",
+      "header": "Medications",
       "items": [
-        "lieky, ktoré beriem",
-        "lieky, ktoré by sa mohli hodiť",
-        "kartička cestovného poistenia",
-        "kartička zdravotného poistenia"
+        "medications I take",
+        "medications that might come in handy",
+        "travel insurance card",
+        "health insurance card"
       ]
     },
     {
-      "header": "Oblečenie - hlavné",
+      "header": "Clothing - main",
       "items": [
-        "tričko / sveter / košeľa (1-2ks/deň)",
-        "nohavice (1ks/4dni)"
+        "t-shirt / sweater / shirt (1–2 pcs/day)",
+        "trousers (1 pc/4 days)"
       ]
     },
     {
-      "header": "Oblečenie - doplnky",
+      "header": "Clothing - accessories",
       "items": [
-        "spodné prádlo",
-        "ponožky"
+        "underwear",
+        "socks"
       ]
     },
     {
-      "header": "Na spanie",
+      "header": "For sleeping",
       "items": [
-        "pyžamo",
-        "štuple do uší",
-        "maska na oči"
+        "pajamas",
+        "earplugs",
+        "sleep mask"
       ]
     },
     {
-      "header": "Kozmetika",
+      "header": "Toiletries",
       "items": [
-        "dezodorant",
-        "voňavka",
-        "zubná kefka (+ pasta)",
-        "tampóny do uší"
+        "deodorant",
+        "perfume",
+        "toothbrush (+ toothpaste)",
+        "cotton swabs"
       ]
     },
     {
-      "header": "Voľný čas",
+      "header": "Leisure",
       "items": [
-        "časopis",
-        "kniha",
-        "čítačka kníh"
+        "magazine",
+        "book",
+        "e-reader"
       ]
     }
   ]
