@@ -4,6 +4,12 @@
 
 This project is a small demo showing how to build a checklist-style app using [Material UI](https://mui.com/) components within a React application. It serves as a simple example for managing state and UI in a list-based interface.
 
+It is ideal for:
+ - Beginners learning React and Material UI basics
+ - Developers looking for a lightweight example of state management with lists
+ - Anyone who wants a starter template for a checklist or travel packing app
+ - The code is intentionally kept simple and readable, without any external state management libraries or complex build tools.
+
 ## 🌐 Live Demo
 
 The app is hosted on 👉 [**GitHub Pages**](https://r3mus99.github.io/simple-travel-list/)
