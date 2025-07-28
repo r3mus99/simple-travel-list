@@ -1,13 +1,13 @@
 {
-  "main.css": "/zoznam-na-cestu/static/css/main.5ccb2e65.chunk.css",
-  "main.js": "/zoznam-na-cestu/static/js/main.c9f2aaac.chunk.js",
-  "main.js.map": "/zoznam-na-cestu/static/js/main.c9f2aaac.chunk.js.map",
-  "runtime~main.js": "/zoznam-na-cestu/static/js/runtime~main.f662eb7b.js",
-  "runtime~main.js.map": "/zoznam-na-cestu/static/js/runtime~main.f662eb7b.js.map",
-  "static/js/2.1aa6e7e0.chunk.js": "/zoznam-na-cestu/static/js/2.1aa6e7e0.chunk.js",
-  "static/js/2.1aa6e7e0.chunk.js.map": "/zoznam-na-cestu/static/js/2.1aa6e7e0.chunk.js.map",
-  "index.html": "/zoznam-na-cestu/index.html",
-  "precache-manifest.5e905db1bbb603e07d3742ded46f5bfa.js": "/zoznam-na-cestu/precache-manifest.5e905db1bbb603e07d3742ded46f5bfa.js",
-  "service-worker.js": "/zoznam-na-cestu/service-worker.js",
-  "static/css/main.5ccb2e65.chunk.css.map": "/zoznam-na-cestu/static/css/main.5ccb2e65.chunk.css.map"
+  "files": {
+    "main.css": "/simple-travel-list/static/css/main.fd6290cf.css",
+    "main.js": "/simple-travel-list/static/js/main.e581537e.js",
+    "index.html": "/simple-travel-list/index.html",
+    "main.fd6290cf.css.map": "/simple-travel-list/static/css/main.fd6290cf.css.map",
+    "main.e581537e.js.map": "/simple-travel-list/static/js/main.e581537e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fd6290cf.css",
+    "static/js/main.e581537e.js"
+  ]
 }
