@@ -40,7 +40,7 @@ hr {
   /* todo position: relative; */ 
 }
 
-.item {
+.Item {
   border: 2px solid #AAAAAA;
   border-radius: 5px;
   background-color: #dddddd2e;
@@ -48,15 +48,15 @@ hr {
   display: flex;
 }
 
-.item .Left {
+.Item .Left {
   flex: 1;
 }
 
-.item .Right {
+.Item .Right {
   color: gainsboro;
   /* width: auto; */
 }
 
-.item :hover {
+.Item :hover {
 
 }

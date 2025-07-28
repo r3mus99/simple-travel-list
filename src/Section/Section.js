@@ -1,112 +1,84 @@
+import React, { useState, useCallback } from 'react';
 import '../App.css';
-import React, { Component } from 'react';
-import Item from './content/Item';
+import ItemButton from './content/ItemButton';
 import SectionHidden from './SectionHidden';
 import SectionHeader from './SectionHeader';
-import SectionVisible from "./SectionVisible";
+import SectionVisible from './SectionVisible';
 
-class Section extends Component {
+const Section = ({ header, items }) => {
+    const [itemsChecked, setItemsChecked] = useState([]);
+    const [itemsHidden, setItemsHidden] = useState([]);
+    const [itemsVisible, setItemsVisible] = useState(items);
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            itemsChecked: [],
-            itemsHidden: [],
-            itemsVisible: this.props.items,
-        };
-    }
+    const isItemChecked = useCallback(
+        (item) => itemsChecked.includes(item),
+        [itemsChecked]
+    );
 
-    handleItemChange = (item) => {
-        const isItemChecked = this.isItemChecked(item);
-        const actualItems = this.state.itemsChecked;
+    const isItemVisible = useCallback(
+        (item) => itemsVisible.includes(item),
+        [itemsVisible]
+    );
 
-        if (isItemChecked) {
-            this.setState(prevState => ({
-                itemsChecked: prevState.itemsChecked.filter(h => h !== item)
-            }));
-        } else {
-            this.setState({
-                itemsChecked: [...actualItems, item]
-            });
-        }
-        // window.localStorage.setItem(this.props.header, JSON.stringify(this.state));
-    };
+    const handleItemChange = useCallback(
+        (item) => {
+            if (isItemChecked(item)) {
+                setItemsChecked((prev) => prev.filter((h) => h !== item));
+            } else {
+                setItemsChecked((prev) => [...prev, item]);
+            }
+        },
+        [isItemChecked]
+    );
 
-    isItemChecked(item) {
-        return this.state.itemsChecked.indexOf(item) !== -1;
-    }
+    const handleItemVisibilityChange = useCallback(
+        (item) => {
+            if (isItemVisible(item)) {
+                setItemsVisible((prev) => prev.filter((h) => h !== item));
+                setItemsHidden((prev) => [...prev, item]);
+            } else {
+                setItemsHidden((prev) => prev.filter((h) => h !== item));
+                setItemsVisible((prev) => [...prev, item]);
+            }
+        },
+        [isItemVisible]
+    );
 
-    isItemVisible(item) {
-        return this.state.itemsVisible.indexOf(item) !== -1;
-    }
-
-    handleItemVisibilityChange = (item) => {
-        const value = this.isItemVisible(item);
-        var actualHidden = this.state.itemsHidden;
-        var actualVisible = this.state.itemsVisible;
-
-        if (value) {
-            // add item to hidden array
-            this.setState({
-                itemsHidden: [...actualHidden, item]
-            });
-            this.setState(prevState => ({
-                itemsVisible: prevState.itemsVisible.filter(h => h !== item)
-            }));
-        } else {
-            this.setState({
-                itemsVisible: [...actualVisible, item]
-            });
-            // remove item from hidden array
-            this.setState(prevState => ({
-                itemsHidden: prevState.itemsHidden.filter(h => h !== item)
-            }));
-        }
-        // window.localStorage.setItem(this.props.header, JSON.stringify(this.state));
-    };
-
-    mapItem = (item) => {
-        return (
-            <Item
+    const mapItem = useCallback(
+        (item) => (
+            <ItemButton
+                key={item}
                 label={item}
-                id={item} /* todo refactor */
-                onChange={this.handleItemChange}
-                onVisibilityChange={this.handleItemVisibilityChange}
-                checked={this.isItemChecked(item)}
-                visible={this.isItemVisible(item)}
+                id={item}
+                onChange={handleItemChange}
+                onVisibilityChange={handleItemVisibilityChange}
+                checked={isItemChecked(item)}
+                visible={isItemVisible(item)}
             />
-        )
-    };
+        ),
+        [handleItemChange, handleItemVisibilityChange, isItemChecked, isItemVisible]
+    );
 
-    render() {
+    const itemsVisibleMapped = itemsVisible.map(mapItem);
+    const itemsHiddenMapped = itemsHidden.map(mapItem);
 
-        const itemsVisibleMapped = this.state.itemsVisible.map(this.mapItem);
-        const itemsHiddenMapped = this.state.itemsHidden.map(this.mapItem);
+    const itemsCheckedLength = itemsChecked.filter(isItemVisible).length;
+    const progress =
+        itemsVisible.length > 0
+            ? (itemsCheckedLength / itemsVisible.length) * 100
+            : 0;
 
-        const itemsVisibleLength = this.state.itemsVisible.length;
-        const itemsCheckedLength = this.state.itemsChecked
-            .filter(item => this.isItemVisible(item)).length;
-        // count only visible items as checked
-        const progress = (itemsCheckedLength / itemsVisibleLength) * 100;
-
-        return (
-            <div className="Section">
-                <SectionHeader
-                    header={this.props.header}
-                    itemsChecked={itemsCheckedLength}
-                    itemsAll={itemsVisibleLength} />
-                <SectionVisible
-                    items={itemsVisibleMapped}
-                    progress={progress} />
-                <SectionHidden
-                    items={itemsHiddenMapped} />
-                {/*<div>{"checked: " + JSON.stringify(this.state.itemsChecked)}</div>*/}
-                {/*<div>{"visible: " + JSON.stringify(this.state.itemsVisible)}</div>*/}
-                {/*<div>{"hidden: " + JSON.stringify(this.state.itemsHidden)}</div>*/}
-            </div>
-        );
-    }
-
-}
+    return (
+        <div className="Section">
+            <SectionHeader
+                header={header}
+                itemsChecked={itemsCheckedLength}
+                itemsAll={itemsVisible.length}
+            />
+            <SectionVisible items={itemsVisibleMapped} progress={progress} />
+            <SectionHidden items={itemsHiddenMapped} />
+        </div>
+    );
+};
 
 export default Section;

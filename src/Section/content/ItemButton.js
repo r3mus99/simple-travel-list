@@ -1,26 +1,38 @@
 import '../../App.css';
-import React, { Component } from 'react';
+import React from 'react';
+import Checkbox from '@mui/material/Checkbox';
 import Button from '@mui/material/Button';
-import IconDown from '@mui/icons-material/KeyboardArrowDown';
-import IconUp from '@mui/icons-material/KeyboardArrowUp';
+import IconButton from '@mui/material/IconButton';
+import Visibility from '@mui/icons-material/Visibility';
+import VisibilityOff from '@mui/icons-material/VisibilityOff';
 
-class ItemButton extends Component {
+const ItemButton = (props)=> {
+    const handleChange = () => props.onChange(props.id);
+    const handleVisibility = () => props.onVisibilityChange(props.id);
 
-    render() {
-        const icon = this.props.contentVisible && !this.props.disabled
-            ? <IconUp/>
-            : <IconDown/>;
+    return (
+        <div className="Item">
+            <Checkbox style={{ width: 'auto' }}
+                checked={props.checked}
+                onClick={handleChange}
+                disabled={!props.visible} />
 
-        return(
-            <div style={{width: "auto"}}>
-                <Button 
-                    fullWidth disabled={this.props.disabled}
-                    onClick={this.props.onClick}>
-                    {icon}
-                </Button>
-            </div>
-        );
-    }
+            <Button
+                style={{ justifyContent: "left", width: '90%' }}
+                onClick={handleChange}
+                disabled={!props.visible}>
+                {props.label}
+            </Button>
+
+            <IconButton style={{ width: 'auto' }}
+                aria-label="hide"
+                className="grayIcon"
+                onClick={handleVisibility}>
+                {!props.visible ? <Visibility/> : <VisibilityOff/>}
+            </IconButton>
+
+        </div>
+        )
 
 }
 

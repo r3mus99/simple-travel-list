@@ -1,19 +1,17 @@
 import '../App.css';
-import React, { Component } from 'react';
+import React from 'react';
 
-class SectionHeader extends Component {
-    render() {
-        return (
-            <div className="Header">
-                <div className="Left">
-                    <p>{this.props.header}</p>
-                </div>
-                <div className="Right">
-                    <p>{this.props.itemsChecked}/{this.props.itemsAll}</p>
-                </div>
+function SectionHeader(props) {
+    return (
+        <div className="Header">
+            <div className="Left">
+                <p>{props.header}</p>
             </div>
-        );
-    }
+            <div className="Right">
+                <p>{props.itemsChecked}/{props.itemsAll}</p>
+            </div>
+        </div>
+    );
 }
 
 export default SectionHeader;
