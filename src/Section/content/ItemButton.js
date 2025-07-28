@@ -1,8 +1,8 @@
 import '../../App.css';
 import React, { Component } from 'react';
-import Button from '@material-ui/core/Button';
-import IconDown from '@material-ui/icons/KeyboardArrowDown';
-import IconUp from '@material-ui/icons/KeyboardArrowUp';
+import Button from '@mui/material/Button';
+import IconDown from '@mui/icons-material/KeyboardArrowDown';
+import IconUp from '@mui/icons-material/KeyboardArrowUp';
 
 class ItemButton extends Component {
 

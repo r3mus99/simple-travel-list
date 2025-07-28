@@ -1,10 +1,10 @@
 import '../../App.css';
 import React, { Component } from 'react';
-import Checkbox from '@material-ui/core/Checkbox';
-import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
-import VisibilityOn from '@material-ui/icons/Visibility';
-import VisibilityOff from '@material-ui/icons/VisibilityOff';
+import Checkbox from '@mui/material/Checkbox';
+import Button from '@mui/material/Button';
+import IconButton from '@mui/material/IconButton';
+import Visibility from '@mui/icons-material/Visibility';
+import VisibilityOff from '@mui/icons-material/VisibilityOff';
 
 class SingleItem extends Component {
 
@@ -19,7 +19,7 @@ class SingleItem extends Component {
     render() {
         let visibilityButton;
         if (!this.props.visible) {
-            visibilityButton = <VisibilityOn />;
+            visibilityButton = <Visibility />;
         } else {
             visibilityButton = <VisibilityOff />;
         }

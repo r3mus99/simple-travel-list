@@ -1,15 +1,19 @@
 {
-  "name": "zoznam",
-  "version": "0.1.0",
+  "name": "list",
+  "version": "1.0.0",
   "private": true,
-  "homepage": "https://r3mus99.github.io/zoznam-na-cestu/",
+  "homepage": "https://r3mus99.github.io/simple-travel-list/",
   "dependencies": {
-    "@material-ui/core": "^3.6.1",
-    "@material-ui/icons": "^3.0.1",
-    "react": "^16.6.3",
-    "react-dom": "^16.6.3",
-    "react-flip-move": "^3.0.3",
-    "react-scripts": "^2.1.5"
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@mui/icons-material": "^5.15.15",
+    "@mui/material": "^5.15.15",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-scripts": "^5.0.1"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -27,8 +31,5 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ],
-  "devDependencies": {
-    "gh-pages": "^5.0.0"
-  }
+  ]
 }

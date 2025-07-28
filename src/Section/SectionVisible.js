@@ -1,7 +1,6 @@
 import '../App.css';
 import React, { Component } from 'react';
-import FlipMove from 'react-flip-move';
-import LinearProgress from "@material-ui/core/LinearProgress/LinearProgress";
+import LinearProgress from '@mui/material/LinearProgress';
 
 class SectionVisible extends Component {
 
@@ -13,14 +12,7 @@ class SectionVisible extends Component {
 
         return (
             <div>
-                <FlipMove
-                    duration={100}
-                    enterAnimation={'accordionVertical'}
-                    leaveAnimation={'none'} // todo
-                    >
-                    {this.props.items}
-                </FlipMove>
-
+                {this.props.items}
                 <LinearProgress variant="determinate" color="secondary" value={this.props.progress} />
             </div>
         );
