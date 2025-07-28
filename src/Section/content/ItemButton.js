@@ -26,7 +26,7 @@ const ItemButton = (props)=> {
 
             <IconButton style={{ width: 'auto' }}
                 aria-label="hide"
-                className="grayIcon"
+                className="GrayIcon"
                 onClick={handleVisibility}>
                 {!props.visible ? <Visibility/> : <VisibilityOff/>}
             </IconButton>

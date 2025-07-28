@@ -7,7 +7,7 @@ hr {
 .App {
   text-align: center;
   margin: auto;
-  background-color: #001f3f;
+  background-color: #fffcef;
 }
 
 .Section {
@@ -44,7 +44,7 @@ hr {
   border: 2px solid #AAAAAA;
   border-radius: 5px;
   background-color: #dddddd2e;
-  margin: 1px;
+  margin: 5px 0;
   display: flex;
 }
 
@@ -55,6 +55,10 @@ hr {
 .Item .Right {
   color: gainsboro;
   /* width: auto; */
+}
+
+.Item .GrayIcon {
+  color: #dbdbdb;
 }
 
 .Item :hover {

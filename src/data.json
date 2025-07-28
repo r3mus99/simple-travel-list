@@ -1,68 +1,90 @@
 {
   "content": [
     {
-      "header": "Documents",
+      "header": "📄 Documents",
       "items": [
-        "money and payment card",
-        "ID card",
-        "driver's license",
-        "passport"
+        "💳 money and payment card",
+        "🪪 ID card",
+        "🚘 driver's license",
+        "🛂 passport (if needed)",
+        "🛡️ travel insurance (printed or digital)",
+        "🏥 health insurance card"
       ]
     },
     {
-      "header": "Electronics",
+      "header": "🔌 Electronics",
       "items": [
-        "phone (+ charger)",
-        "headphones",
-        "power bank"
+        "📱 phone + charger",
+        "🎧 headphones / earbuds",
+        "🔋 power bank",
+        "🔌 travel adapter (if needed)",
+        "💻 laptop / tablet (optional)",
+        "📸 camera (optional)"
       ]
     },
     {
-      "header": "Medications",
+      "header": "💊 Medications & Health",
       "items": [
-        "medications I take",
-        "medications that might come in handy",
-        "travel insurance card",
-        "health insurance card"
+        "💊 daily medications",
+        "🩹 basic first aid (e.g., plasters, painkillers)",
+        "😷 face masks (if needed)",
+        "🧴 hand sanitizer"
       ]
     },
     {
-      "header": "Clothing - main",
+      "header": "👕 Clothing - Main",
       "items": [
-        "t-shirt / sweater / shirt (1–2 pcs/day)",
-        "trousers (1 pc/4 days)"
+        "👕 t-shirts / shirts (1–2 pcs/day)",
+        "🧥 sweater / hoodie / jacket",
+        "👖 trousers / jeans (1 pc/3–4 days)",
+        "👗 dress / skirt (if applicable)",
+        "👟 comfortable shoes / sneakers",
+        "🩴 flip-flops / sandals"
       ]
     },
     {
-      "header": "Clothing - accessories",
+      "header": "🧦 Clothing - Accessories",
       "items": [
-        "underwear",
-        "socks"
+        "🩲 underwear (1–2 pcs/day)",
+        "🧦 socks (1 pair/day)",
+        "🧢 cap / hat",
+        "🧣 scarf / gloves (seasonal)",
+        "🕶️ sunglasses",
+        "👜 small backpack / day bag"
       ]
     },
     {
-      "header": "For sleeping",
+      "header": "😴 For Sleeping",
       "items": [
-        "pajamas",
-        "earplugs",
-        "sleep mask"
+        "🛌 pajamas / sleepwear",
+        "🦻 earplugs",
+        "😎 sleep mask",
+        "🧸 travel pillow (optional)"
       ]
     },
     {
-      "header": "Toiletries",
+      "header": "🧼 Toiletries",
       "items": [
-        "deodorant",
-        "perfume",
-        "toothbrush (+ toothpaste)",
-        "cotton swabs"
+        "🧴 deodorant",
+        "🌸 perfume / cologne",
+        "🪥 toothbrush + toothpaste",
+        "🧽 cotton swabs",
+        "🧴 shampoo / shower gel",
+        "🪒 razor / shaving supplies",
+        "💅 nail clippers / tweezers",
+        "🧻 tissues / toilet paper",
+        "🩸 feminine hygiene (if needed)"
       ]
     },
     {
-      "header": "Leisure",
+      "header": "📚 Leisure & Extras",
       "items": [
-        "magazine",
-        "book",
-        "e-reader"
+        "📖 book / e-reader",
+        "📰 magazine",
+        "🎲 travel games / cards",
+        "📝 notebook + pen",
+        "🍫 snacks",
+        "💧 reusable water bottle"
       ]
     }
   ]
