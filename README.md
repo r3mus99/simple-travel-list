@@ -1,5 +1,7 @@
 # 🛃 Simple Travel List
 
+![Screenshot](./simple-travel-list-2.png)
+
 **A minimal example of using Material UI in a React list app.**
 
 This project is a small demo showing how to build a checklist-style app using [Material UI](https://mui.com/) components within a React application. It serves as a simple example for managing state and UI in a list-based interface.
