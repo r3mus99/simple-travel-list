@@ -3,7 +3,7 @@ import React from 'react';
 
 function SectionHeader(props) {
     return (
-        <div className="Header">
+        <div className="Header" style={{color: props.color}}>
             <div className="Left">
                 <p>{props.header}</p>
             </div>

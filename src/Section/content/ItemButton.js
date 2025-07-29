@@ -12,13 +12,13 @@ const ItemButton = (props)=> {
 
     return (
         <div className="Item">
-            <Checkbox style={{ width: 'auto' }}
+            <Checkbox style={{ width: 'auto', color: props.color }}
                 checked={props.checked}
                 onClick={handleChange}
                 disabled={!props.visible} />
 
             <Button
-                style={{ justifyContent: "left", width: '90%' }}
+                style={{ justifyContent: "left", width: '90%', color: props.color }}
                 onClick={handleChange}
                 disabled={!props.visible}>
                 {props.label}

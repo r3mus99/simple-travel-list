@@ -5,7 +5,8 @@ import SectionHidden from './SectionHidden';
 import SectionHeader from './SectionHeader';
 import SectionVisible from './SectionVisible';
 
-const Section = ({ header, items }) => {
+const Section = (props) => {
+    const {header, items, color, backgroundColor} = props.section;
     const [itemsChecked, setItemsChecked] = useState([]);
     const [itemsHidden, setItemsHidden] = useState([]);
     const [itemsVisible, setItemsVisible] = useState(items);
@@ -49,6 +50,7 @@ const Section = ({ header, items }) => {
             <ItemButton
                 key={item}
                 label={item}
+                color={color}
                 id={item}
                 onChange={handleItemChange}
                 onVisibilityChange={handleItemVisibilityChange}
@@ -69,9 +71,10 @@ const Section = ({ header, items }) => {
             : 0;
 
     return (
-        <div className="Section">
+        <div className="Section" style={{backgroundColor: backgroundColor}}>
             <SectionHeader
                 header={header}
+                color={color}
                 itemsChecked={itemsCheckedLength}
                 itemsAll={itemsVisible.length}
             />

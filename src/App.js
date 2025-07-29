@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import './App.css';
 import Section from './Section/Section';
 import data from './data.json';
@@ -34,14 +34,11 @@ class App extends Component {
 
   render() {
 
-    const content = data.content.map(section => {
-      return <Section header={section.header} items={section.items}/>
-    });
-
     return (
       <div className="App">
-        {/* <LinearProgress color="secondary" variant="determinate" value={this.state.completed} /> */}
-        {content}
+        {data.content.map(section => {
+          return <Section section={section}/>
+        })}
       </div>
     );
   }

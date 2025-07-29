@@ -9,7 +9,9 @@
         "🛂 passport (if needed)",
         "🛡️ travel insurance (printed or digital)",
         "🏥 health insurance card"
-      ]
+      ],
+      "color": "#6A1B9A",
+      "backgroundColor": "#F3E5F5"
     },
     {
       "header": "🔌 Electronics",
@@ -20,7 +22,9 @@
         "🔌 travel adapter (if needed)",
         "💻 laptop / tablet (optional)",
         "📸 camera (optional)"
-      ]
+      ],
+      "color": "#2E7D32",
+      "backgroundColor": "#E8F5E9"
     },
     {
       "header": "💊 Medications & Health",
@@ -29,7 +33,9 @@
         "🩹 basic first aid (e.g., plasters, painkillers)",
         "😷 face masks (if needed)",
         "🧴 hand sanitizer"
-      ]
+      ],
+      "color": "#BE8300",
+      "backgroundColor": "#F5FFBB"
     },
     {
       "header": "👕 Clothing - Main",
@@ -40,7 +46,9 @@
         "👗 dress / skirt (if applicable)",
         "👟 comfortable shoes / sneakers",
         "🩴 flip-flops / sandals"
-      ]
+      ],
+      "color": "#006064",
+      "backgroundColor": "#E0F7FA"
     },
     {
       "header": "🧦 Clothing - Accessories",
@@ -51,7 +59,9 @@
         "🧣 scarf / gloves (seasonal)",
         "🕶️ sunglasses",
         "👜 small backpack / day bag"
-      ]
+      ],
+      "color": "#4E342E",
+      "backgroundColor": "#EFEBE9"
     },
     {
       "header": "😴 For Sleeping",
@@ -60,7 +70,9 @@
         "🦻 earplugs",
         "😎 sleep mask",
         "🧸 travel pillow (optional)"
-      ]
+      ],
+      "color": "#37474F",
+      "backgroundColor": "#ECEFF1"
     },
     {
       "header": "🧼 Toiletries",
@@ -74,7 +86,9 @@
         "💅 nail clippers / tweezers",
         "🧻 tissues / toilet paper",
         "🩸 feminine hygiene (if needed)"
-      ]
+      ],
+      "color": "#EF6C00",
+      "backgroundColor": "#FFF3E0"
     },
     {
       "header": "📚 Leisure & Extras",
@@ -85,7 +99,9 @@
         "📝 notebook + pen",
         "🍫 snacks",
         "💧 reusable water bottle"
-      ]
+      ],
+      "color": "#1A237E",
+      "backgroundColor": "#E8EAF6"
     }
   ]
 }
